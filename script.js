@@ -49,11 +49,10 @@ const countries = [
   { name: 'Polonia', flag: '🇵🇱' },
   { name: 'Grecia', flag: '🇬🇷' },
   { name: 'Ucrania', flag: '🇺🇦' },
-  { name: 'Hungría', flag: '🇭🇺' },
-  { name: 'República Checa', flag: '🇨🇿' },
-  { name: 'Cuba', flag: '🇨🇺' },
-  { name: 'Dominicana', flag: '🇩🇴' },
-  { name: 'Puerto Rico', flag: '🇵🇷' }
+  { name: 'Marruecos', flag: '🇲🇦' },
+  { name: 'Polonia', flag: '🇵🇱' },
+  { name: 'Grecia', flag: '🇬🇷' },
+  { name: 'Ucrania', flag: '🇺🇦' }
 ];
 
 const playBtn = document.getElementById('playBtn');
