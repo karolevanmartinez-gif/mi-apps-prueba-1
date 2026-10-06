@@ -3,8 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blank</title>
+    <title>Selecciona un país</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <button id="playBtn" class="play-btn" type="button">Jugar</button>
+
+    <section id="selectorSection" class="selector hidden" aria-live="polite">
+      <div class="selector-card">
+        <div class="selector-header">
+          <h2>Elige un país</h2>
+          <button id="closeBtn" class="close-btn" type="button" aria-label="Cerrar">×</button>
+        </div>
+
+        <div id="countryList" class="country-list"></div>
+
+        <div id="countryResult" class="country-result hidden">
+          <div id="flag" class="flag">🇲🇽</div>
+          <span id="countryName">México</span>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
 </html>
