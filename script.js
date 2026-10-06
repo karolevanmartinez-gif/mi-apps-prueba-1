@@ -53,8 +53,7 @@ const countries = [
   { name: 'República Checa', flag: '🇨🇿' },
   { name: 'Cuba', flag: '🇨🇺' },
   { name: 'Dominicana', flag: '🇩🇴' },
-  { name: 'Puerto Rico', flag: '🇵🇷' },
-  { name: 'Japón', flag: '🇯🇵' }
+  { name: 'Puerto Rico', flag: '🇵🇷' }
 ];
 
 const playBtn = document.getElementById('playBtn');
@@ -100,37 +99,43 @@ function renderCountries() {
 playBtn.addEventListener('click', openSelector);
 closeBtn.addEventListener('click', closeSelector);
 
-let touchStartY = null;
-let dragging = false;
+let pointerStart = null;
 
-function handleGestureStart(event) {
-  const point = event.touches ? event.touches[0] : event;
-  touchStartY = point.clientY;
-  dragging = true;
+function handlePointerDown(event) {
+  if (event.target.closest('button')) {
+    return;
+  }
+
+  pointerStart = {
+    x: event.clientX,
+    y: event.clientY
+  };
 }
 
-function handleGestureEnd(event) {
-  if (!dragging || touchStartY === null) return;
+function handlePointerUp(event) {
+  if (!pointerStart) return;
 
-  const point = event.changedTouches ? event.changedTouches[0] : event;
-  const deltaY = point.clientY - touchStartY;
+  const dx = event.clientX - pointerStart.x;
+  const dy = event.clientY - pointerStart.y;
+  const isVertical = Math.abs(dy) > Math.abs(dx);
+
+  if (!isVertical || Math.abs(dy) < 50) {
+    pointerStart = null;
+    return;
+  }
 
   if (selectorSection.classList.contains('hidden')) {
-    if (deltaY > 50) {
+    if (dy > 0) {
       openSelector();
     }
   } else {
-    if (deltaY < -50) {
+    if (dy < 0) {
       closeSelector();
     }
   }
 
-  dragging = false;
-  touchStartY = null;
+  pointerStart = null;
 }
 
-document.addEventListener('touchstart', handleGestureStart, { passive: true });
-document.addEventListener('touchend', handleGestureEnd, { passive: true });
-
-document.addEventListener('mousedown', handleGestureStart);
-document.addEventListener('mouseup', handleGestureEnd);
+window.addEventListener('pointerdown', handlePointerDown, { passive: true });
+window.addEventListener('pointerup', handlePointerUp, { passive: true });
