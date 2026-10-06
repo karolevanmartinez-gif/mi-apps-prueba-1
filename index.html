@@ -3,86 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo Bloom</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <title>Blank</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <div class="app-shell">
-      <div class="app-card">
-        <header class="topbar">
-          <div>
-            <p class="eyebrow">Organiza tu día</p>
-            <h1>Todo Bloom</h1>
-          </div>
-          <button class="theme-badge" type="button" aria-label="Tema claro">
-            <span class="dot"></span>
-            pastel
-          </button>
-        </header>
-
-        <form id="taskForm" class="task-form">
-          <label class="sr-only" for="taskInput">Nueva tarea</label>
-          <input
-            id="taskInput"
-            type="text"
-            placeholder="Añade una nueva tarea..."
-            maxlength="120"
-            autocomplete="off"
-            required
-          />
-          <button type="submit" class="primary-btn">Agregar</button>
-        </form>
-
-        <div class="stats" aria-live="polite">
-          <div class="stat-box">
-            <span>Total</span>
-            <strong id="totalTasks">0</strong>
-          </div>
-          <div class="stat-box">
-            <span>Activas</span>
-            <strong id="activeTasks">0</strong>
-          </div>
-          <div class="stat-box">
-            <span>Completas</span>
-            <strong id="completedTasks">0</strong>
-          </div>
-        </div>
-
-        <div class="toolbar">
-          <div class="filters" aria-label="Filtros de tareas">
-            <button class="filter-btn active" data-filter="all" type="button">Todas</button>
-            <button class="filter-btn" data-filter="active" type="button">Activas</button>
-            <button class="filter-btn" data-filter="completed" type="button">Completas</button>
-          </div>
-          <button id="clearCompleted" class="ghost-btn" type="button">Borrar completadas</button>
-        </div>
-
-        <ul id="taskList" class="task-list" aria-live="polite"></ul>
-
-        <button id="continueBtn" class="continue-btn" type="button">
-          Continuar
-          <span class="arrow">→</span>
-        </button>
-      </div>
-    </div>
-
-    <template id="taskTemplate">
-      <li class="task-item">
-        <label class="task-check">
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-        <span class="task-text"></span>
-        <button type="button" class="delete-btn" aria-label="Eliminar tarea">×</button>
-      </li>
-    </template>
-
-    <script src="script.js"></script>
-  </body>
+  <body></body>
 </html>
