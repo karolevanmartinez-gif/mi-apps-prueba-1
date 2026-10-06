@@ -51,7 +51,10 @@ const countries = [
   { name: 'Ucrania', flag: '🇺🇦' },
   { name: 'Hungría', flag: '🇭🇺' },
   { name: 'República Checa', flag: '🇨🇿' },
-  { name: 'Argentina', flag: '🇦🇷' }
+  { name: 'Cuba', flag: '🇨🇺' },
+  { name: 'Dominicana', flag: '🇩🇴' },
+  { name: 'Puerto Rico', flag: '🇵🇷' },
+  { name: 'Japón', flag: '🇯🇵' }
 ];
 
 const playBtn = document.getElementById('playBtn');
@@ -61,6 +64,16 @@ const countryList = document.getElementById('countryList');
 const countryResult = document.getElementById('countryResult');
 const countryName = document.getElementById('countryName');
 const flag = document.getElementById('flag');
+
+function openSelector() {
+  selectorSection.classList.remove('hidden');
+  renderCountries();
+}
+
+function closeSelector() {
+  selectorSection.classList.add('hidden');
+  countryResult.classList.add('hidden');
+}
 
 function renderCountries() {
   countryList.innerHTML = '';
@@ -84,12 +97,40 @@ function renderCountries() {
   });
 }
 
-playBtn.addEventListener('click', () => {
-  selectorSection.classList.remove('hidden');
-  renderCountries();
-});
+playBtn.addEventListener('click', openSelector);
+closeBtn.addEventListener('click', closeSelector);
 
-closeBtn.addEventListener('click', () => {
-  selectorSection.classList.add('hidden');
-  countryResult.classList.add('hidden');
-});
+let touchStartY = null;
+let dragging = false;
+
+function handleGestureStart(event) {
+  const point = event.touches ? event.touches[0] : event;
+  touchStartY = point.clientY;
+  dragging = true;
+}
+
+function handleGestureEnd(event) {
+  if (!dragging || touchStartY === null) return;
+
+  const point = event.changedTouches ? event.changedTouches[0] : event;
+  const deltaY = point.clientY - touchStartY;
+
+  if (selectorSection.classList.contains('hidden')) {
+    if (deltaY > 50) {
+      openSelector();
+    }
+  } else {
+    if (deltaY < -50) {
+      closeSelector();
+    }
+  }
+
+  dragging = false;
+  touchStartY = null;
+}
+
+document.addEventListener('touchstart', handleGestureStart, { passive: true });
+document.addEventListener('touchend', handleGestureEnd, { passive: true });
+
+document.addEventListener('mousedown', handleGestureStart);
+document.addEventListener('mouseup', handleGestureEnd);
