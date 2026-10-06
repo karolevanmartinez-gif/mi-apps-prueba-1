@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi App Prueba 1</title>
+    <meta
+      name="description"
+      content="Landing page moderna creada con HTML, CSS y JavaScript."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <a href="#inicio" class="logo">App<span>Pro</span></a>
+
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu">
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto" class="btn btn-primary small">Contacto</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <p class="eyebrow">Soluciones digitales</p>
+            <h1>Diseñamos experiencias que convierten visitas en clientes.</h1>
+            <p class="lead">
+              Creamos páginas web modernas, rápidas y efectivas para hacer crecer tu
+              negocio en el entorno digital.
+            </p>
+            <div class="hero-actions">
+              <a href="#contacto" class="btn btn-primary">Solicitar presupuesto</a>
+              <a href="#proyectos" class="btn btn-secondary">Ver proyectos</a>
+            </div>
+            <ul class="hero-stats">
+              <li><strong>+250</strong><span>Proyectos</span></li>
+              <li><strong>4.9/5</strong><span>Valoración</span></li>
+              <li><strong>24/7</strong><span>Soporte</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Preview de la aplicación">
+            <div class="dashboard-card">
+              <div class="dashboard-header">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="dashboard-body">
+                <div class="chart large"></div>
+                <div class="stats-grid">
+                  <div class="mini-stat">
+                    <span>Ventas</span>
+                    <strong>+42%</strong>
+                  </div>
+                  <div class="mini-stat">
+                    <span>Leads</span>
+                    <strong>1.2k</strong>
+                  </div>
+                </div>
+                <div class="chart small"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicios" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Servicios</p>
+            <h2>Todo lo que necesitas para crecer online</h2>
+          </div>
+
+          <div class="cards-grid three-columns">
+            <article class="card service-card">
+              <div class="icon">⚡</div>
+              <h3>Landing Pages</h3>
+              <p>
+                Diseños atractivos y conversiones optimizadas para captar clientes.
+              </p>
+            </article>
+
+            <article class="card service-card">
+              <div class="icon">🎨</div>
+              <h3>Diseño UX/UI</h3>
+              <p>
+                Interfaces intuitivas, elegantes y alineadas con tu marca.
+              </p>
+            </article>
+
+            <article class="card service-card">
+              <div class="icon">📈</div>
+              <h3>Marketing Digital</h3>
+              <p>
+                Estrategias para mejorar visibilidad, tráfico y rendimiento.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="proyectos" class="section alt-bg">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Proyectos</p>
+            <h2>Casos de éxito recientes</h2>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card card">
+              <div class="project-image project-one"></div>
+              <div class="project-content">
+                <span class="tag">E-commerce</span>
+                <h3>StoreBoost</h3>
+                <p>Rediseño completo para aumentar las ventas móviles.</p>
+              </div>
+            </article>
+
+            <article class="project-card card">
+              <div class="project-image project-two"></div>
+              <div class="project-content">
+                <span class="tag">Startup</span>
+                <h3>NovaFlow</h3>
+                <p>Landing page enfocada en captación de leads B2B.</p>
+              </div>
+            </article>
+
+            <article class="project-card card">
+              <div class="project-image project-three"></div>
+              <div class="project-content">
+                <span class="tag">Servicios</span>
+                <h3>BusinessCore</h3>
+                <p>Experiencia más clara y profesional para clientes nuevos.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="nosotros" class="section">
+        <div class="container about-grid">
+          <div class="about-copy">
+            <p class="eyebrow">Nosotros</p>
+            <h2>Un equipo que combina estrategia, diseño y tecnología.</h2>
+            <p>
+              Ayudamos a marcas y negocios a crear presencia digital con soluciones
+              funcionales, modernas y enfocadas en resultados reales.
+            </p>
+            <ul class="check-list">
+              <li>Enfoque en conversiones</li>
+              <li>Diseño responsive</li>
+              <li>Optimización técnica</li>
+            </ul>
+          </div>
+
+          <div class="about-quote card">
+            <p>
+              “La mejor forma de crecer es ofrecer una experiencia clara, rápida y memorable
+              desde la primera visita.”
+            </p>
+            <div class="quote-author">
+              <strong>Equipo AppPro</strong>
+              <span>Marketing & Diseño</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="section cta-section">
+        <div class="container cta-box card">
+          <div>
+            <p class="eyebrow">Contacto</p>
+            <h2>¿Listo para impulsar tu proyecto?</h2>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+            <input type="email" name="email" placeholder="Tu email" required />
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>© 2026 AppPro. Todos los derechos reservados.</p>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
