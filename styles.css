@@ -23,7 +23,7 @@ body {
   display: grid;
   place-items: center;
   padding: 24px;
-  touch-action: pan-y;
+  touch-action: none;
 }
 
 .play-btn {
@@ -52,6 +52,7 @@ body {
   display: grid;
   place-items: center;
   padding: 20px;
+  z-index: 1000;
 }
 
 .hidden {
@@ -67,6 +68,9 @@ body {
   padding: 24px;
   transform: translateY(0);
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
 }
 
 .selector-header {
@@ -75,6 +79,7 @@ body {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .selector-header h2 {
@@ -93,11 +98,20 @@ body {
   line-height: 1;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
 }
 
 .close-btn:hover {
   background: var(--text);
   color: var(--bg);
+}
+
+.country-list-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 20px;
+  touch-action: pan-y;
 }
 
 .country-list {
@@ -117,6 +131,7 @@ body {
   gap: 10px;
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
 }
 
 .country-item:hover {
@@ -135,7 +150,7 @@ body {
 }
 
 .country-result {
-  margin-top: 22px;
+  margin-top: auto;
   border-radius: 20px;
   background: #f0f0f0;
   border: 2px solid var(--text);
@@ -144,6 +159,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 14px;
+  flex-shrink: 0;
 }
 
 .flag {
